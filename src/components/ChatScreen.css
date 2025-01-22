@@ -1,0 +1,6 @@
+@media (max-width: 768px) {
+  .absolute {
+    top: var(--mobile-top-position) !important;
+    left: var(--mobile-left-position) !important;
+  }
+} 

@@ -1,0 +1,53 @@
+@keyframes slideLeft {
+  0% {
+    left: 20%;
+  }
+  50% {
+    left: 60%;
+  }
+  100% {
+    left: 20%;
+  }
+}
+
+@keyframes slideLeftOnce {
+  0% {
+    left: 20%;
+  }
+  100% {
+    left: 60%;
+  }
+}
+
+.animate-slide-left {
+  animation: slideLeft 5s infinite ease-in-out;
+}
+
+.animate-slide-left-once {
+  animation: slideLeftOnce 2s forwards ease-out;
+}
+
+/* Custom Scrollbar Styles */
+/* Webkit browsers (Chrome, Safari, newer Edge) */
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #0C1626;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #263248;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3659B1;
+  }
+  
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #263248 #0C1626;
+  }

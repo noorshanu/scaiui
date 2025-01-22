@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.inter {
+  font-family: "Inter", serif;
+
+}
+
+body {
+  font-family: "Inter", serif;
+  background-color: #040113;
+  color: #fff;
+  background-image: url('images/grid.png');
+  background-repeat: repeat;
+  background-position: center;
+}
+.fram1{
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #2124567c;
+}
+.fram2{
+  background-image: url('images/fram2.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}  
