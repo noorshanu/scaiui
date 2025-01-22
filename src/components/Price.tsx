@@ -85,7 +85,7 @@ function Price() {
 
   return (
     <div
-      className={`flex flex-row gap-4 items-center justify-between fram1 h-auto sm:h-[150px] border border-[#37408B] rounded-xl px-6 pt-2 pb-6 mb-4 transition-opacity duration-500 ${
+      className={`flex flex-row gap-4 items-center justify-between fram1 h-auto sm:h-[120px] border border-[#37408B] rounded-xl px-6 pt-2 pb-6 mb-4 transition-opacity duration-500 ${
         animation ? "opacity-0" : "opacity-100"
       }`}
     >

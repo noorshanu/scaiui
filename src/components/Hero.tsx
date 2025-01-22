@@ -12,7 +12,7 @@ function Hero() {
         <div className="sm:hidden">
           <img src="images/chatmob.png" alt="" className="mx-auto" />
         </div>
-        <div className="h-full ">
+        <div className="h-full border border-[#37408B] rounded-xl px-6 pt-2 pb-6 mb-4 transition-opacity duration-500 ">
           <MarketAnalysis />
         </div>
       </div>
