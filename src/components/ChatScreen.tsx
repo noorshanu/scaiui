@@ -23,9 +23,16 @@ const useTypewriter = (text: string, speed: number = 50) => {
 };
 
 function ChatScreen() {
-  const messageText = "Major volume spike detected on BTC/USD. Processing 1m+ datapoints...";
+  const messages = [
+    "Major volume spike detected on BTC/USD. Processing 1m+ datapoints...",
+    "AI model predicting potential breakout in ETH/USD...",
+    "Market sentiment analysis complete. Bullish signals detected...",
+    "Neural network processing order flow data...",
+    "Analyzing whale wallet movements in real-time...",
+    "Running deep learning models on market volatility..."
+  ];
+
   const [visibleChats, setVisibleChats] = useState<number[]>([]);
-  // Add state for multiple typing effects
   const [typingStates, setTypingStates] = useState<{ [key: number]: string }>({});
 
   // Randomly change visible chats
@@ -57,6 +64,7 @@ function ChatScreen() {
   useEffect(() => {
     visibleChats.forEach(chatIndex => {
       let i = 0;
+      const messageText = messages[chatIndex]; // Get specific message for this chat
       const timer = setInterval(() => {
         if (i < messageText.length) {
           setTypingStates(prev => ({
