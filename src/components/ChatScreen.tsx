@@ -25,15 +25,16 @@ const useTypewriter = (text: string, speed: number = 50) => {
 function ChatScreen() {
   const messageText = "Major volume spike detected on BTC/USD. Processing 1m+ datapoints...";
   const [visibleChats, setVisibleChats] = useState<number[]>([]);
+  // Add state for multiple typing effects
+  const [typingStates, setTypingStates] = useState<{ [key: number]: string }>({});
 
   // Randomly change visible chats
   useEffect(() => {
     const interval = setInterval(() => {
-      const numToShow = Math.floor(Math.random() * 3) + 1; // Random number between 1-3
+      const numToShow = Math.floor(Math.random() * 3) + 1;
       const availableIndices = Array.from({ length: 6 }, (_, i) => i);
       const selectedIndices: number[] = [];
       
-      // Randomly select n indices where n is numToShow
       for (let i = 0; i < numToShow; i++) {
         const randomIndex = Math.floor(Math.random() * availableIndices.length);
         selectedIndices.push(availableIndices[randomIndex]);
@@ -41,12 +42,36 @@ function ChatScreen() {
       }
       
       setVisibleChats(selectedIndices);
-    }, 3000); // Change every 3 seconds
+      // Reset typing states for newly visible chats
+      const newTypingStates: { [key: number]: string } = {};
+      selectedIndices.forEach(index => {
+        newTypingStates[index] = "";
+      });
+      setTypingStates(newTypingStates);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
 
-  const typedText = useTypewriter(messageText);
+  // Add effect for typing animation
+  useEffect(() => {
+    visibleChats.forEach(chatIndex => {
+      let i = 0;
+      const timer = setInterval(() => {
+        if (i < messageText.length) {
+          setTypingStates(prev => ({
+            ...prev,
+            [chatIndex]: messageText.substring(0, i + 1)
+          }));
+          i++;
+        } else {
+          clearInterval(timer);
+        }
+      }, 50);
+
+      return () => clearInterval(timer);
+    });
+  }, [visibleChats]);
 
   const chatImages = [
     "chat.png", "chat2.png", "chat3.png",
@@ -63,7 +88,7 @@ function ChatScreen() {
           >
             <img src={`images/${image}`} alt="" className="w-full mx-auto" />
             <p className="text-white text-sm absolute top-[55%] left-[15%]">
-              {typedText}
+              {visibleChats.includes(index) ? typingStates[index] : ''}
             </p>
           </div>
         ))}
