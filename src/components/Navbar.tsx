@@ -10,7 +10,7 @@ function Navbar() {
             <img src="images/logo.png" alt="logo" className="w-full" />
           </div>
           <div className="text-center">
-            <h1 className="text-xl md:text-2xl font-bold">Scia Ai Agents workflow</h1>
+            <h1 className="text-xl md:text-2xl font-bold">Scia Ai Agents Communications</h1>
           </div>
           <div className="flex items-center gap-4">
             <a href="/" className="text-2xl md:text-3xl"> <FaDiscord/></a>
