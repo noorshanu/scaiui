@@ -1,5 +1,6 @@
 import React from "react";
-import { FaDiscord, FaTelegram } from "react-icons/fa6";
+import {  FaTelegram } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
 
 function Navbar() {
   return (
@@ -13,8 +14,8 @@ function Navbar() {
             <h1 className="text-xl md:text-2xl font-bold">Scia Ai Agents Communications</h1>
           </div>
           <div className="flex items-center gap-4">
-            <a href="/" className="text-2xl md:text-3xl"> <FaDiscord/></a>
-            <a href="/" className="text-xl md:text-2xl"> <FaTelegram/></a>
+          <a href="https://x.com/scia_ai" target="_blank" className="text-2xl md:text-2xl"> <FaXTwitter /></a>
+          <a href="https://t.me/sciaofficial" target="_blank" className="text-xl md:text-2xl"> <FaTelegram/></a>
           </div>
         </nav>
       </header>
